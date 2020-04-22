@@ -1,0 +1,29 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/movie" method="POST" autocomplete="off"  enctype="multipart/form-data">
+    <input type="hidden" name="_id" value="{{movie._id}}">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="fullName" placeholder="Full Name" value="{{movie.fullName}}">
+        <div class="text-danger">
+            {{movie.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>image</label>
+        <input type="file" class="form-control" name="file" accept="image/*"/>
+        <div class="text-danger">
+            {{movie.fileError}}</div>
+    </div>
+   
+     <div class="form-group">
+        <label>Summary</label>
+        <input type="text" class="form-control" name="summary" placeholder="Summary" value="{{movie.summary}}">
+        <div class="text-danger">
+            {{movie.summaryError}}</div>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/movie/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
